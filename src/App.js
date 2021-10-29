@@ -6,28 +6,36 @@ import OrderDetails from './Components/OrderDetails/OrderDetails';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import NoPageFound from './Components/NoPageFound/NoPageFound';
+import Login from './Components/Login/Login';
+import AuthProvider from './AuthProvider/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   return (
-    <BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
     
-      <Header></Header>  
-    <Switch>
-    <Route exact path="/">
+    <Header></Header>  
+  <Switch>
+  <Route exact path="/">
 <Home></Home>
 </Route>
 <Route path="/home">
 <Home></Home>
 </Route>
-<Route path="/orderdetail/:orderId">
+<PrivateRoute path="/orderdetail/:orderId">
 <OrderDetails></OrderDetails>
+</PrivateRoute>
+<Route path="/login">
+<Login></Login>
 </Route>
 <Route path="*">
 <NoPageFound></NoPageFound>
 </Route>
-    </Switch>
-     <Footer></Footer> 
-    </BrowserRouter>
+  </Switch>
+   <Footer></Footer> 
+  </BrowserRouter>
+    </AuthProvider>
     
   );
 }

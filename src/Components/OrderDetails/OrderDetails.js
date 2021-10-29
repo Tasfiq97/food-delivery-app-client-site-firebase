@@ -17,7 +17,6 @@ useEffect(()=>{
 
 const filteredOrder=orders.find(order=>order.key==orderId)
    selectedOrder.push(filteredOrder);
-//    console.log(selectedOrder)
     return (
         <div>
             <h1 className="text-4xl text-center font-extrabold mt-14 mb-20">Order Details</h1>

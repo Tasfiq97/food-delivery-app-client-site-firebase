@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const OfferDetails = ({dt}) => {
-    const {name,image,open,time,key}=dt;
+    const {name,image,open,time,key,description}=dt;
 
     return (
         <div className="p-12">
@@ -14,6 +14,7 @@ const OfferDetails = ({dt}) => {
            <h1 className="text-3xl">{name}</h1>
             <p className="text-2xl text-red-500">  {open}</p>
             <p className="p-2"> <FontAwesomeIcon icon={faClock}/> {time}</p>
+            <p>{description.slice(0,200)}</p>
             <Link to={`/orderdetail/${key}`}>
             <button style={{transition:"all 0.3s ease-in"}} className="p-5 mt-5 text-white border-1 bg-indigo-600 hover:bg-indigo-200 hover:text-black">Place Order</button>
             </Link>
