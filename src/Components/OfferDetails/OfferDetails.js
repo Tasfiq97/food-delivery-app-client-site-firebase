@@ -8,7 +8,7 @@ const OfferDetails = ({dt}) => {
 
     return (
         <div className="p-12">
-            <div className="border-2">
+            <div >
                 <img style={{transition:"all 0.3s ease-in"}}   className="h-4/6 rounded-lg" src={image} alt="" />
            <div className="p-10 bg-indigo-100">
            <h1 className="text-3xl">{name}</h1>
