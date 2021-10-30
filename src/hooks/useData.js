@@ -5,7 +5,7 @@ const useData=()=>{
    const [data,setData]=useState([]);
 
    useEffect(()=>{
-       fetch("./fakedata.json")
+       fetch("http://localhost:5000/offers")
        .then(res=>res.json())
        .then(data=>setData(data));
    },[])

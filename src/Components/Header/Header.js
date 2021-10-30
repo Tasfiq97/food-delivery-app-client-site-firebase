@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../hooks/useAuth';
-import useFirebase from '../../hooks/useFirebase';
+
 
 
 const Header = () => {
@@ -19,23 +19,25 @@ const Header = () => {
     </div>
     <div className="lg:flex list-none">
        <Link to="/home"> 
-       <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2   hover:bg-indigo-600 rounded">Home</li>
+       <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2   hover:bg-indigo-600 rounded text-2xl">Home</li>
        </Link>
         <HashLink to="/home#offers">
-        <li  style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2   hover:bg-indigo-600 rounded">Offers</li>
+        <li  style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2   hover:bg-indigo-600 rounded text-2xl">Offers</li>
         </HashLink>
  
            {user?.email ?
            <>
-           <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded">My Orders</li>
-        <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded">Manage All Orders</li>
-        <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded">Add a new Service</li>
-        <span className="mt-4 p-2">{user.displayName}</span>
+          <Link to="/manageOrder">
+          <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded text-2xl">My Orders</li>
+          </Link>
+        <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded text-2xl">Manage All Orders</li>
+        <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded text-2xl">Add a new Service</li>
+        <span className="mt-4 p-2 text-xl">{user.displayName}</span>
            </>
     :" "}
        { user?.email ? <button onClick={logOut} style={{transition:"all 0.3s ease-in"}} className="p-2 text-white mt-4 border-1 bg-indigo-600 hover:bg-indigo-200 hover:text-black">Logout</button>
        : <Link to="/login">
-       <button style={{transition:"all 0.3s ease-in"}} className="p-2 text-white mt-4 border-1 bg-indigo-600 hover:bg-indigo-200 hover:text-black">Sign in</button>
+       <button style={{transition:"all 0.3s ease-in"}} className="p-2 text-white mt-4 border-1 bg-indigo-600 hover:bg-indigo-200 hover:text-black text-2xl">Sign Up</button>
        </Link>}
     </div>
 </nav>

@@ -6,7 +6,7 @@ const Application= () => {
             <div className="p-9">
             <h1 className="text-4xl font-extrabold">Get More From <span className="text-indigo-600">Our Application</span></h1>
             <p>you can easily order food from our application</p>
-            <p className="mt-11 lg:text-2xl sm:text-2xl "><span className="rounded-full bg-indigo-400 p-3 ">1</span> Follow Delivery Status</p>
+            <p className="mt-11 lg:text-2xl sm:text-2xl "><span className="rounded-full bg-indigo-400 p-2 ">1</span> Follow Delivery Status</p>
             <p className="mt-8 lg:text-2xl sm:text-2xl "> <span className="rounded-full bg-indigo-400 p-2">2</span> Order From any location</p>
             <p  className="mt-8 lg:text-2xl sm:text-2xl "><span className="rounded-full bg-indigo-400 p-2">3</span>Get important notices</p>
             </div>

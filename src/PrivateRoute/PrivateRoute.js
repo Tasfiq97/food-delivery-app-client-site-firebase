@@ -5,10 +5,10 @@ import useAuth from '../hooks/useAuth';
 const PrivateRoute = ({children,...rest}) => {
     const {user,loading}=useAuth()
     if(loading){
-      return <div class="flex items-center justify-center space-x-2 animate-pulse">
-      <div class="w-8 h-8 bg-indigo-600 rounded-full"></div>
-      <div class="w-8 h-8 bg-indigo-600 rounded-full"></div>
-      <div class="w-8 h-8 bg-indigo-600 rounded-full"></div>
+      return <div className="flex items-center justify-center space-x-2 animate-pulse">
+      <div className="w-8 h-8 bg-indigo-600 rounded-full"></div>
+      <div className="w-8 h-8 bg-indigo-600 rounded-full"></div>
+      <div className="w-8 h-8 bg-indigo-600 rounded-full"></div>
   </div>
     }
     return (

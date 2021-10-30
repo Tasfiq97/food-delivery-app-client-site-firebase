@@ -9,6 +9,8 @@ import NoPageFound from './Components/NoPageFound/NoPageFound';
 import Login from './Components/Login/Login';
 import AuthProvider from './AuthProvider/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import DetailInfo from './Components/DetailInfo/DetailInfo';
+import ManageOrder from './Components/ManageOrder/ManageOrder';
 
 function App() {
   return (
@@ -29,6 +31,12 @@ function App() {
 <Route path="/login">
 <Login></Login>
 </Route>
+<PrivateRoute path="/detailInfo/:id">
+<DetailInfo></DetailInfo>
+</PrivateRoute>
+<PrivateRoute path="/manageOrder">
+<ManageOrder></ManageOrder>
+</PrivateRoute>
 <Route path="*">
 <NoPageFound></NoPageFound>
 </Route>

@@ -7,7 +7,7 @@ const OrderDetails = () => {
 const [orders,setOrders]=useState([])
 const selectedOrder=[];
 useEffect(()=>{
-   fetch("/fakedata.json")
+   fetch("http://localhost:5000/offers")
    .then(res=>res.json())
    .then(data=>setOrders(data))
    
@@ -15,14 +15,14 @@ useEffect(()=>{
 },[])
 
 
-const filteredOrder=orders.find(order=>order.key==orderId)
+const filteredOrder=orders.find(order=>order._id==orderId)
    selectedOrder.push(filteredOrder);
     return (
         <div>
             <h1 className="text-4xl text-center font-extrabold mt-14 mb-20">Order Details</h1>
             {
                 selectedOrder.map(info=><OrderInfo
-                 key={info?.key}
+                 key={info?._id}
                 info={info}
                 ></OrderInfo>)
             }
