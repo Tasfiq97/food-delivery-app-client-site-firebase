@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react/cjs/react.development';
 import useAuth from '../../hooks/useAuth';
 
@@ -45,7 +46,13 @@ const handleDelete=(id)=>{
    
     return (
         <div>
-            {manageOrders.length===0?   <h1 className="text-center text-4xl font-semibold mb-20 mt-16">Please order first</h1>
+            {manageOrders.length===0? <>  <h1 className="text-center text-4xl font-semibold mb-20 mt-16">Please order first</h1>
+          <Link to="/home">
+          <div className="text-center">
+          <button style={{transition:"all 0.3s ease-in"}} className="p-3 pl-5 pr-5 text-xl  border-1 ml-7 bg-indigo-600 hover:bg-indigo-200 hover:text-black font-semibold text-center">Go back</button>
+          </div>
+          </Link>
+            </>
                : <h1 className="text-center text-4xl font-semibold mb-20 mt-16">Your All orders</h1>}
 
             <div className="lg:grid lg:grid-cols-2 mb-32 gap-4 ">
@@ -60,7 +67,7 @@ const handleDelete=(id)=>{
                             <div>
                             <h1 className="text-3xl text-indigo-600 font-semibold ml-7">{items.orders?.foodName}</h1>
                             <p className="text-3xl text-black font-semibold p-7"> $: {items.orders.price}</p>
-                            <button onClick={()=>handleDelete(items._id)}  style={{transition:"all 0.3s ease-in"}} className="p-2 pl-4 pr-4 text-xl  border-1 ml-7 bg-indigo-600 hover:bg-indigo-200 hover:text-black font-semibold">Cancel</button>
+                            <button onClick={()=>handleDelete(items._id)}  style={{transition:"all 0.3s ease-in"}} className="p-2 pl-4 pr-4 text-xl text-white  border-1 ml-7 bg-indigo-600 hover:bg-indigo-200 hover:text-black font-semibold">Cancel</button>
                             </div>
                             </div>
 

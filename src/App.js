@@ -38,9 +38,9 @@ function App() {
 <PrivateRoute path="/manageOrder">
 <ManageOrder></ManageOrder>
 </PrivateRoute>
-<Route path="/allOrders">
+<PrivateRoute path="/allOrders">
 <AllOrders></AllOrders>
-</Route>
+</PrivateRoute>
 <Route path="*">
 <NoPageFound></NoPageFound>
 </Route>
