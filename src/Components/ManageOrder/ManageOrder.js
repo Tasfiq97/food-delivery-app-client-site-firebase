@@ -20,7 +20,7 @@ const ManageOrder = () => {
 
 const handleDelete=(id)=>{
       
-     const proceed=window.confirm("are you sure uou want to cancel?");
+     const proceed=window.confirm("are you sure you want to cancel?");
      if(proceed){
         fetch(`http://localhost:5000/deleteOrder/${id}`,{
             method:"DELETE",
