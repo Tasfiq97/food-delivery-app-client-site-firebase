@@ -30,7 +30,9 @@ const Header = () => {
           <Link to="/manageOrder">
           <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded text-2xl">My Orders</li>
           </Link>
+        <Link to="/allOrders">
         <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded text-2xl">Manage All Orders</li>
+        </Link>
         <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded text-2xl">Add a new Service</li>
         <span className="mt-4 p-2 text-xl">{user.displayName}</span>
            </>
