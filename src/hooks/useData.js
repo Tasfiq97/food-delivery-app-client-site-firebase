@@ -5,7 +5,7 @@ const useData=()=>{
    const [data,setData]=useState([]);
 
    useEffect(()=>{
-       fetch("http://localhost:5000/offers")
+       fetch("https://grisly-moonlight-74244.herokuapp.com/offers")
        .then(res=>res.json())
        .then(data=>setData(data));
    },[])

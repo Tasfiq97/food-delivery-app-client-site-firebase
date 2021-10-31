@@ -3,7 +3,7 @@ import axios from 'axios';
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from 'react-router';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react'
 import useAuth from '../../hooks/useAuth';
 
 
@@ -11,7 +11,7 @@ const DetailInfo = () => {
     const {id}=useParams()
     const [orderData,setOrderData]=useState({});
  useEffect(()=>{
-    axios.get(`http://localhost:5000/offers/${id}`)
+    axios.get(`https://grisly-moonlight-74244.herokuapp.com/offers/${id}`)
     .then(result=>setOrderData(result.data));
  },[orderData])
     const { register, handleSubmit,reset } = useForm();
@@ -21,7 +21,7 @@ const DetailInfo = () => {
      data.orders=orderData;
      data.status="pending";
       console.log(data);
-    axios.post("http://localhost:5000/orderInfo",data)
+    axios.post("https://grisly-moonlight-74244.herokuapp.com/orderInfo",data)
     .then(result=>{
       if(result.data.insertedId){
         alert("your order is done");

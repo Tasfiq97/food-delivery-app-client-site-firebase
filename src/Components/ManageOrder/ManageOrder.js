@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 
 
@@ -10,7 +10,7 @@ const ManageOrder = () => {
     const {user}=useAuth()
 
     useEffect(()=>{
-        axios.get("http://localhost:5000/manageOrder")
+        axios.get("https://grisly-moonlight-74244.herokuapp.com/manageOrder")
         .then(result=>{
             const data=result.data;
            const filterOrder=data.filter(dt=> dt.email===user.email)
@@ -23,7 +23,7 @@ const handleDelete=(id)=>{
       
      const proceed=window.confirm("are you sure you want to cancel?");
      if(proceed){
-        fetch(`http://localhost:5000/deleteOrder/${id}`,{
+        fetch(`https://grisly-moonlight-74244.herokuapp.com/deleteOrder/${id}`,{
             method:"DELETE",
              headers:{"content-type":"application/json"},
         })

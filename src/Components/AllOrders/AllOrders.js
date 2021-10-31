@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React from 'react';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react';
 
 const AllOrders = () => {
 
     const [allOrders,setAllOrders]=useState([])
     const [update,setUpdate]=useState(null)
     useEffect(()=>{
-    axios.get("http://localhost:5000/manageOrder")
+    axios.get("https://grisly-moonlight-74244.herokuapp.com/manageOrder")
     .then(result=>setAllOrders(result.data))
     },[update])
 
@@ -16,7 +16,7 @@ const AllOrders = () => {
       
         const proceed=window.confirm("are you sure uou want to cancel?");
         if(proceed){
-           fetch(`http://localhost:5000/deleteOrder/${id}`,{
+           fetch(`https://grisly-moonlight-74244.herokuapp.com/deleteOrder/${id}`,{
                method:"DELETE",
                 headers:{"content-type":"application/json"},
            })
@@ -36,7 +36,7 @@ const AllOrders = () => {
 
    const handleUpdate=(id)=>{
 
-    fetch(`http://localhost:5000/update/${id}`,{
+    fetch(`https://grisly-moonlight-74244.herokuapp.com/update/${id}`,{
         method:"PUT",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(allOrders)

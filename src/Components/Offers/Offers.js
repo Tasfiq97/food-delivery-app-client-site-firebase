@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import useData from '../../hooks/useData';
 import OfferDetails from '../OfferDetails/OfferDetails';
 

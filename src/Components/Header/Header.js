@@ -12,30 +12,54 @@ const Header = () => {
         <div>
 <nav className="lg:flex bg-white justify-between items-center p-5">
     <div>
-       <NavLink to="/home">
+       <NavLink 
+       to="/home"
+        >
        <h1 className="lg:text-3xl font-semibold sm:text-2xl"> <span className="text-indigo-600 font-bold ">Expressos</span></h1>
+       <h3 className="text-2xl font-semibold">Delivery</h3>
        </NavLink>
-        <h3 className="text-2xl font-semibold">Delivery</h3>
+     
     </div>
     <div className="lg:flex list-none">
-       <Link to="/home"> 
+       <NavLink to="/home"
+       activeStyle={{
+        fontWeight: "bold",
+        color: "indigo"
+      }}
+       > 
        <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2   hover:bg-indigo-600 rounded text-2xl active">Home</li>
-       </Link>
+       </NavLink>
         <HashLink to="/home#offers">
         <li  style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2   hover:bg-indigo-600 rounded text-2xl ">Offers</li>
         </HashLink>
  
            {user?.email ?
            <>
-          <Link to="/manageOrder">
+          <NavLink to="/manageOrder"
+          activeStyle={{
+            fontWeight: "bold",
+            color: "indigo"
+          }}
+          >
           <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded text-2xl ">My Orders</li>
-          </Link>
-        <Link to="/allOrders">
+          </NavLink>
+        <NavLink to="/allOrders" 
+        activeStyle={{
+            fontWeight: "bold",
+            color: "indigo"
+          }}
+        >
         <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded text-2xl ">Manage All Orders</li>
-        </Link>
-       <Link to="/addOffers">
+        </NavLink>
+       <NavLink to="/addOffers"
+       activeStyle={{
+        fontWeight: "bold",
+        color: "indigo"
+      }}
+       
+       >
        <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded text-2xl">Add new offers</li>
-       </Link>
+       </NavLink>
         <span className="mt-4 p-2 text-xl">{user.displayName}</span>
            </>
     :" "}
