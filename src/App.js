@@ -12,6 +12,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import DetailInfo from './Components/DetailInfo/DetailInfo';
 import ManageOrder from './Components/ManageOrder/ManageOrder';
 import AllOrders from './Components/AllOrders/AllOrders';
+import AddOffers from './Components/AddOffers/AddOffers';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
 </PrivateRoute>
 <PrivateRoute path="/allOrders">
 <AllOrders></AllOrders>
+</PrivateRoute>
+<PrivateRoute path="/addOffers">
+<AddOffers></AddOffers>
 </PrivateRoute>
 <Route path="*">
 <NoPageFound></NoPageFound>

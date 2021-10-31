@@ -19,21 +19,23 @@ const Header = () => {
     </div>
     <div className="lg:flex list-none">
        <Link to="/home"> 
-       <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2   hover:bg-indigo-600 rounded text-2xl">Home</li>
+       <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2   hover:bg-indigo-600 rounded text-2xl active">Home</li>
        </Link>
         <HashLink to="/home#offers">
-        <li  style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2   hover:bg-indigo-600 rounded text-2xl">Offers</li>
+        <li  style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2   hover:bg-indigo-600 rounded text-2xl ">Offers</li>
         </HashLink>
  
            {user?.email ?
            <>
           <Link to="/manageOrder">
-          <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded text-2xl">My Orders</li>
+          <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded text-2xl ">My Orders</li>
           </Link>
         <Link to="/allOrders">
-        <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded text-2xl">Manage All Orders</li>
+        <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded text-2xl ">Manage All Orders</li>
         </Link>
-        <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded text-2xl">Add a new Service</li>
+       <Link to="/addOffers">
+       <li style={{transition:"all 0.3s ease-in",cursor:"pointer"}}  className="mr-8 mt-4 p-2  hover:bg-indigo-600 rounded text-2xl">Add new offers</li>
+       </Link>
         <span className="mt-4 p-2 text-xl">{user.displayName}</span>
            </>
     :" "}
