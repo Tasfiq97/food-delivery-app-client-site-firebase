@@ -11,7 +11,7 @@ const DetailInfo = () => {
     const {id}=useParams()
     const [orderData,setOrderData]=useState({});
  useEffect(()=>{
-    axios.get(`https://food-delivery-server-site-node-mongodb-h9s7.vercel.app/offers/${id}`)
+    axios.get(`https://food-delivery-server-site-node-mongodb.vercel.app/offers/${id}`)
     .then(result=>setOrderData(result.data));
  },[orderData])
     const { register, handleSubmit,reset } = useForm();
@@ -20,7 +20,7 @@ const DetailInfo = () => {
   const onSubmit = data => {
      data.orders=orderData;
      data.status="pending";
-    axios.post("https://food-delivery-server-site-node-mongodb-h9s7.vercel.app/orderInfo",data)
+    axios.post("https://food-delivery-server-site-node-mongodb.vercel.app/orderInfo",data)
     .then(result=>{
       if(result.data.insertedId){
         alert("your order is done");

@@ -7,7 +7,7 @@ const OrderDetails = () => {
 const [orders,setOrders]=useState([])
 const selectedOrder=[];
 useEffect(()=>{
-   fetch("https://food-delivery-server-site-node-mongodb-h9s7.vercel.app/offers")
+   fetch("https://food-delivery-server-site-node-mongodb.vercel.app/offers")
    .then(res=>res.json())
    .then(data=>setOrders(data))
    

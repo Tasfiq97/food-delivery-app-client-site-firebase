@@ -5,7 +5,7 @@ const useData=()=>{
    const [data,setData]=useState([]);
 
    useEffect(()=>{
-       fetch("https://food-delivery-server-site-node-mongodb-h9s7.vercel.app/offers")
+       fetch("https://food-delivery-server-site-node-mongodb.vercel.app/offers")
        .then(res=>res.json())
        .then(data=>setData(data));
    },[])

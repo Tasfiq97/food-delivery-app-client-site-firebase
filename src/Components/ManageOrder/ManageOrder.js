@@ -10,7 +10,7 @@ const ManageOrder = () => {
     const {user}=useAuth()
 
     useEffect(()=>{
-        axios.get("https://food-delivery-server-site-node-mongodb-h9s7.vercel.app/manageOrder")
+        axios.get("https://food-delivery-server-site-node-mongodb.vercel.app/manageOrder")
         .then(result=>{
             const data=result.data;
            const filterOrder=data.filter(dt=> dt.email===user.email)
@@ -23,7 +23,7 @@ const handleDelete=(id)=>{
       
      const proceed=window.confirm("are you sure you want to cancel?");
      if(proceed){
-        fetch(`https://food-delivery-server-site-node-mongodb-h9s7.vercel.app/deleteOrder/${id}`,{
+        fetch(`https://food-delivery-server-site-node-mongodb.vercel.app/deleteOrder/${id}`,{
             method:"DELETE",
              headers:{"content-type":"application/json"},
         })
