@@ -5,7 +5,7 @@ const useData=()=>{
    const [data,setData]=useState([]);
 
    useEffect(()=>{
-       fetch("https://grisly-moonlight-74244.herokuapp.com/offers")
+       fetch("https://food-delivery-server-site-node-mongodb-h9s7.vercel.app/offers")
        .then(res=>res.json())
        .then(data=>setData(data));
    },[])

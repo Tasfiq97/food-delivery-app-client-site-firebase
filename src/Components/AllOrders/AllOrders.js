@@ -7,7 +7,7 @@ const AllOrders = () => {
     const [allOrders,setAllOrders]=useState([])
     const [update,setUpdate]=useState(null)
     useEffect(()=>{
-    axios.get("https://grisly-moonlight-74244.herokuapp.com/manageOrder")
+    axios.get("https://food-delivery-server-site-node-mongodb-h9s7.vercel.app/manageOrder")
     .then(result=>setAllOrders(result.data))
     },[update])
 
@@ -16,7 +16,7 @@ const AllOrders = () => {
       
         const proceed=window.confirm("are you sure uou want to cancel?");
         if(proceed){
-           fetch(`https://grisly-moonlight-74244.herokuapp.com/deleteOrder/${id}`,{
+           fetch(`https://food-delivery-server-site-node-mongodb-h9s7.vercel.app/deleteOrder/${id}`,{
                method:"DELETE",
                 headers:{"content-type":"application/json"},
            })
@@ -36,7 +36,7 @@ const AllOrders = () => {
 
    const handleUpdate=(id)=>{
 
-    fetch(`https://grisly-moonlight-74244.herokuapp.com/update/${id}`,{
+    fetch(`https://food-delivery-server-site-node-mongodb-h9s7.vercel.app/update/${id}`,{
         method:"PUT",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(allOrders)

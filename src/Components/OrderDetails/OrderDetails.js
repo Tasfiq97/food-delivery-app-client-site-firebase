@@ -7,7 +7,7 @@ const OrderDetails = () => {
 const [orders,setOrders]=useState([])
 const selectedOrder=[];
 useEffect(()=>{
-   fetch("https://grisly-moonlight-74244.herokuapp.com/offers")
+   fetch("https://food-delivery-server-site-node-mongodb-h9s7.vercel.app/offers")
    .then(res=>res.json())
    .then(data=>setOrders(data))
    

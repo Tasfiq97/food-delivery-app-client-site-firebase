@@ -7,7 +7,7 @@ const AddOffers = () => {
     const { register, handleSubmit,reset } = useForm();
     const history=useHistory()
  const onSubmit=data=>{
-     axios.post ("https://grisly-moonlight-74244.herokuapp.com/offers",data)
+     axios.post ("https://food-delivery-server-site-node-mongodb-h9s7.vercel.app/offers",data)
      .then(result=>{
          if(result.data.insertedId){
              alert("your food is added to our offers")
